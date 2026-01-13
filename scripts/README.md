@@ -1,87 +1,85 @@
-🚀 AXI-Lite Multi-Functional Peripheral
+# 🚀 AXI-Lite Multi-Functional Peripheral
+```
+This repository provides a **TCL-based automation script** to quickly create and configure a **Xilinx Vivado project** for **Zynq-7000** based designs.
 
-This repository provides a TCL-based automation script to quickly create and configure a Xilinx Vivado project for Zynq-7000 based designs.
+It is intended as a clean starting point for developing **AXI-Lite based custom peripherals** using **Verilog**.
+```
+---
 
-It is intended as a clean starting point for developing AXI-Lite based custom peripherals using Verilog.
+## 🧩 What This Script Does
+```
+The `create_project.tcl` script automatically:
 
-🧩 What This Script Does
-
-The create_project.tcl script automatically:
-
-Creates a new Vivado project
-
-Sets the FPGA part and board (Digilent Eclypse Z7)
-
-Configures the target language (Verilog)
-
-Adds HDL source files from src/
-
-Adds testbench files from tb/
-
-Adds constraint files from constraints/
-
-Updates compile order
+- Creates a new Vivado project  
+- Sets the FPGA part and board (**Digilent Eclypse Z7**)  
+- Configures the target language (**Verilog**)  
+- Adds HDL source files from `src/`  
+- Adds testbench files from `tb/`  
+- Adds constraint files from `constraints/`  
+- Updates compile order  
 
 This allows you to start working immediately without manual project setup.
+```
+---
 
-🗂️ Project Structure
+## 📁 Project Structure
+
+```text
 AXI-Lite-MultiFunctionalPeripheral/
 ├── scripts/
 │   └── create_project.tcl
-├── src/          # HDL source files
-├── tb/           # Simulation files
-├── constraints/  # XDC constraint files
+├── src/            # HDL source files
+├── tb/             # Simulation files
+├── constraints/    # XDC constraint files
 └── README.md
-
+```
+---
+```
 ▶️ How to Run
 
-Open Vivado
+ 1- Open Vivado
 
-Open the TCL Console
+ 2- Open the TCL Console
 
-Run the script:
-
+ 3- Run the script:
+```code
 source scripts/create_project.tcl
-
-
-(Optional) You can override the project name:
-
-set user_project_name MyProject
+```
+```
+(Optional) Override the project name:
+```code
+set user_project_name MyCustomProject
 source scripts/create_project.tcl
-
-✅ After Running
-
-Once completed, Vivado will create the project and print:
-
-✅ PROJECT CREATED SUCCESSFULLY!
-
-
-Next steps:
-
-Add your HDL files to src/
-
-Add testbenches to tb/
-
-Add constraints to constraints/
-
-Run synthesis and implementation
-
-🛠️ Requirements
-
-Xilinx Vivado
-
-Zynq-7000 compatible board (default: Eclypse Z7)
-
-ℹ️ Platform Note
+```
+---
+```
++ Platform Note
 
 If you plan to use a different FPGA board or platform, the board-related parameters in the .tcl script must be updated.
 
-It is recommended to:
+Recommended workflow:
 
-Create a donor Vivado project for the target board
+	+ Create a donor Vivado project for the target board
 
-Copy the part and board_part values from that project
+	+ Copy the part and board_part values from that project
 
-Update the corresponding fields in create_project.tcl
+	+ Update the corresponding fields in create_project.tcl
 
-This ensures correct board definition and avoids compatibility issues during synthesis and implementation.
+This ensures correct board configuration and prevents synthesis or implementation issues.
+```
+---
+```
+✅ After Running
+
+Once the script finishes successfully, the project will be ready in Vivado.
+
+Next steps:
+
+	+ Add HDL files to src/
+
+	+ Add testbench files to tb/
+
+	+ Add constraint files to constraints/
+
+	+ Run synthesis and implementation
+```
