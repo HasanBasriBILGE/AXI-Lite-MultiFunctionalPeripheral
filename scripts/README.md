@@ -67,7 +67,7 @@ Recommended workflow:
 This ensures correct board configuration and prevents synthesis or implementation issues.
 
 ---
-##✅ After Running
+## ✅ After Running
 
 Once the script finishes successfully, the project will be ready in Vivado.
 
