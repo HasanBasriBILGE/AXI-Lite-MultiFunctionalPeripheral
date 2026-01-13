@@ -41,9 +41,6 @@ set obj [current_project]
 if {$board_part ne ""} {
   set_property -name "board_part" -value ${board_part} -objects $obj
 }
-if {$board_connections ne ""} {
-  set_property -name "board_connections" -value ${board_connections} -objects $obj
-}
 if {$board_id ne ""} {
   set_property -name "platform.board_id" -value ${board_id} -objects $obj
 }
