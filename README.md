@@ -7,7 +7,7 @@ The goal is to demonstrate professional-level IP design, verification methodolog
 
 ## Block Diagram
 
-![Block Diagram](./docs/images/AXI-Lite Mixed-Signal Validation Peripheral.png)
+![Block Diagram](./docs/images/AXI-Lite-Mixed-Signal-Validation-Peripheral.png)
 
 ---
 
