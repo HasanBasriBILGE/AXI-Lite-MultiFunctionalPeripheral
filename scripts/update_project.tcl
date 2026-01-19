@@ -57,12 +57,9 @@ proc sync_sources {} {
     # Get files from filesystem (Recursive Search)
     set fs_files [list]
     if {[file exists $src_dir]} {
-        # 'dir' değişkeni rtl altındaki tüm klasörleri (kendisi dahil) gezer
-        # -types d sadece dizinleri bulmasını sağlar
         set search_dirs [concat $src_dir [glob -nocomplain -directory $src_dir -types d -tails *]]
         
         foreach subdir $search_dirs {
-            # Eğer subdir bir tail ise (yani rtl'nin altındaysa) tam yolu birleştir
             if {$subdir ne $src_dir} {
                 set current_path [file join $src_dir $subdir]
             } else {
