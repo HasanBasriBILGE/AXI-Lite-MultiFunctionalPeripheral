@@ -13,17 +13,17 @@ The goal is to demonstrate professional-level IP design, verification methodolog
 
 ## System Architecture
 
-    The system consists of:
-    - Zynq Processing System (PS)
-    - AXI Interconnect
-    - AXI-Lite Mixed-Signal Validation Peripheral (this project)
-    - UART Core
-    - Timer Core
-    - GPIO Core
-    - Measurement Engine
-    - IRQ Controller
-    - AWG Module (Syzygy DAC)
-    - Scope Module (Syzygy ADC)
+The system consists of:
+- Zynq Processing System (PS)
+- AXI Interconnect
+- AXI-Lite Mixed-Signal Validation Peripheral (this project)
+- UART Core
+- Timer Core
+- GPIO Core
+- Measurement Engine
+- IRQ Controller
+- AWG Module (Syzygy DAC)
+- Scope Module (Syzygy ADC)
     
 The AWG generates UART stimulus, the FPGA validates and measures it, and the scope provides reference measurement.
 
@@ -31,28 +31,28 @@ The AWG generates UART stimulus, the FPGA validates and measures it, and the sco
 
 # Functional Requirements
 ## UART
-        - Programmable baud-rate via AXI-Lite register
-        - UART RX and TX support
-        - Framing error detection
-        - Measurement of UART bit period and jitter
-        - Status reporting through registers
+- Programmable baud-rate via AXI-Lite register
+- UART RX and TX support
+- Framing error detection
+- Measurement of UART bit period and jitter
+- Status reporting through registers
 ## Timer
-        - 32-bit programmable timer
-        - One-shot and periodic modes
-        - Used for timing and measurement window control
+- 32-bit programmable timer
+- One-shot and periodic modes
+- Used for timing and measurement window control
 ## GPIO
-        - 8-bit GPIO
-        - Direction control
-        - Used for debug and trigger signaling to scope
+- 8-bit GPIO
+- Direction control
+- Used for debug and trigger signaling to scope
 ## Measurement Engine
-        - Start/stop controlled via register
-        - Measures UART bit period and jitter
-        - Generates measurement status and error flags
-        - Supports RX and TX validation modes
+- Start/stop controlled via register
+- Measures UART bit period and jitter
+- Generates measurement status and error flags
+- Supports RX and TX validation modes
 ## Interrupt Controller
-        - Optional interrupt generation
-        - UART, Timer and Measurement interrupts
-        - Maskable via registers
+- Optional interrupt generation
+- UART, Timer and Measurement interrupts
+- Maskable via registers
 ---
 ## Interface Specifications
 | Interface  | Description                                   |
@@ -74,27 +74,27 @@ The AWG generates UART stimulus, the FPGA validates and measures it, and the sco
 
 ---
 ## Verification Strategy
-    - Directed and random AXI-Lite register tests
-    - UART protocol compliance tests
-    - Measurement engine self-checking tests
-    - UVM-based verification environment
-    - Assertion-based checks
-    - Coverage-driven regression
+- Directed and random AXI-Lite register tests
+- UART protocol compliance tests
+- Measurement engine self-checking tests
+- UVM-based verification environment
+- Assertion-based checks
+- Coverage-driven regression
 ---
 ## Hardware Validation Strategy
-    - AWG generates UART stimulus
-    - Scope measures analog waveform
-    - FPGA measures digital timing
-    - Results compared against reference measurements
-    - Validation report generated
+- AWG generates UART stimulus
+- Scope measures analog waveform
+- FPGA measures digital timing
+- Results compared against reference measurements
+- Validation report generated
 ---
 ## Deliverables
-    - RTL source code
-    - Verification environment (UVM)
-    - Register map documentation
-    - System architecture diagram
-    - Hardware validation report
-    - Coverage and regression reports
+- RTL source code
+- Verification environment (UVM)
+- Register map documentation
+- System architecture diagram
+- Hardware validation report
+- Coverage and regression reports
 
 ---
 # Register Map
